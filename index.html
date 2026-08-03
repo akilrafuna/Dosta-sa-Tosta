@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="sq">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dosta #sa Tosta — Jo thjesht tosta! · Ulpianë, Prishtinë</title>
+<meta name="description" content="Dosta #sa Tosta — tosta të shtypura në moment në Ulpianë, Prishtinë. Pulë, proshutë, sallam, suxhuk e ton, të gjitha 1.50€. Porosit në Wolt.">
+<meta name="theme-color" content="#2e2018">
+
+<meta property="og:title" content="Dosta #sa Tosta — Jo thjesht tosta!">
+<meta property="og:description" content="Tosta të shtypura në moment në Ulpianë, Prishtinë. Çdo tost 1.50€. Porosit në Wolt.">
+<meta property="og:type" content="restaurant">
+<meta property="og:image" content="assets/menu/ham-toast.jpeg">
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%232e2018'/%3E%3Ctext x='16' y='24' font-size='19' text-anchor='middle'%3E%F0%9F%A5%AA%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700;9..144,900&family=Karla:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+
+<!-- Local SEO: tells Google the hours, address, phone and menu -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Restaurant",
+  "name": "Dosta #sa Tosta",
+  "description": "Tosta të shtypura në moment në Ulpianë, Prishtinë.",
+  "servesCuisine": ["Fast Food", "Sandwiches"],
+  "priceRange": "€",
+  "currenciesAccepted": "EUR",
+  "image": "assets/menu/ham-toast.jpeg",
+  "telephone": "+383 45 300 077",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Zija Shemsiu 96",
+    "addressLocality": "Prishtinë",
+    "postalCode": "10000",
+    "addressCountry": "XK"
+  },
+  "sameAs": [
+    "https://wolt.com/en/xkx/pristina/restaurant/dosta-sa-tosta-1",
+    "https://baboon.al/prishtina/dosta-sa-tosta/menu-porosit-online"
+  ],
+  "openingHoursSpecification": [{
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
+    "opens": "09:00",
+    "closes": "21:00"
+  }],
+  "hasMenu": {
+    "@type": "Menu",
+    "hasMenuSection": [
+      {
+        "@type": "MenuSection",
+        "name": "Tosta",
+        "hasMenuItem": [
+          {"@type":"MenuItem","name":"Tost me Pulë","offers":{"@type":"Offer","price":"1.50","priceCurrency":"EUR"}},
+          {"@type":"MenuItem","name":"Tost me Proshutë","offers":{"@type":"Offer","price":"1.50","priceCurrency":"EUR"}},
+          {"@type":"MenuItem","name":"Tost me Sallam","offers":{"@type":"Offer","price":"1.50","priceCurrency":"EUR"}},
+          {"@type":"MenuItem","name":"Tost me Suxhuk","offers":{"@type":"Offer","price":"1.50","priceCurrency":"EUR"}},
+          {"@type":"MenuItem","name":"Tost me Ton","offers":{"@type":"Offer","price":"1.50","priceCurrency":"EUR"}}
+        ]
+      },
+      {
+        "@type": "MenuSection",
+        "name": "Pije të Ftohta",
+        "hasMenuItem": [
+          {"@type":"MenuItem","name":"Coca Cola","offers":{"@type":"Offer","price":"1.50","priceCurrency":"EUR"}},
+          {"@type":"MenuItem","name":"Fanta","offers":{"@type":"Offer","price":"1.50","priceCurrency":"EUR"}},
+          {"@type":"MenuItem","name":"Çaj i Ftohtë","offers":{"@type":"Offer","price":"1.50","priceCurrency":"EUR"}},
+          {"@type":"MenuItem","name":"Ujë","offers":{"@type":"Offer","price":"0.50","priceCurrency":"EUR"}},
+          {"@type":"MenuItem","name":"Jogurt","offers":{"@type":"Offer","price":"0.50","priceCurrency":"EUR"}},
+          {"@type":"MenuItem","name":"Ajran","offers":{"@type":"Offer","price":"0.50","priceCurrency":"EUR"}}
+        ]
+      }
+    ]
+  }
+}
+</script>
+</head>
+<body>
+
+<!-- ================= NAV ================= -->
+<nav class="nav dark">
+  <a class="nav-brand" href="#top">DOSTA<span class="hash">#SA</span>TOSTA</a>
+  <div class="nav-right">
+    <div class="lang" role="group" aria-label="Gjuha / Language">
+      <button type="button" data-lang="sq" aria-pressed="true">SQ</button>
+      <button type="button" data-lang="en" aria-pressed="false">EN</button>
+    </div>
+    <a class="btn btn-wolt" href="https://wolt.com/en/xkx/pristina/restaurant/dosta-sa-tosta-1" target="_blank" rel="noopener">
+      <span class="btn-verb" data-sq="Porosit" data-en="Order">Porosit</span> <span class="wolt-mark">Wolt</span>
+    </a>
+  </div>
+</nav>
+
+<!-- ================= HERO ================= -->
+<header class="hero" id="top">
+  <div class="wrap hero-inner">
+
+    <div class="hero-copy">
+      <div class="hero-meta">
+        <span class="eyebrow" data-sq="Ulpianë · Prishtinë" data-en="Ulpiana · Prishtina">Ulpianë · Prishtinë</span>
+        <span class="status" id="status" hidden></span>
+      </div>
+
+      <h1 class="display" data-sq="Jo thjesht tosta!" data-en="Not just toast!">Jo thjesht tosta!</h1>
+
+      <!-- hand-drawn underline -->
+      <svg class="squiggle" viewBox="0 0 260 12" fill="none" aria-hidden="true">
+        <path d="M2 8C40 3 62 9 96 6s54-5 80-1 52 6 82 2" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>
+      </svg>
+
+      <p class="hero-sub"
+         data-sq="Tosta të shtypura në moment, të mbushura sa duhet — në zemër të <b>Ulpianës</b>."
+         data-en="Pressed-to-order toasts, properly stuffed — in the heart of <b>Ulpiana</b>.">
+        Tosta të shtypura në moment, të mbushura sa duhet — në zemër të <b>Ulpianës</b>.
+      </p>
+
+      <div class="hero-cta">
+        <a class="btn btn-wolt" href="https://wolt.com/en/xkx/pristina/restaurant/dosta-sa-tosta-1" target="_blank" rel="noopener">
+          <span class="btn-verb" data-sq="Porosit në" data-en="Order on">Porosit në</span> <span class="wolt-mark">Wolt</span>
+        </a>
+        <a class="btn btn-ghost" href="#menu" data-sq="Shiko menynë ↓" data-en="See the menu ↓">Shiko menynë ↓</a>
+      </div>
+
+      <!-- one tidy strip instead of loose wrapping pills -->
+      <div class="stats">
+        <div class="stat">
+          <span class="stat-v"><span class="star">★</span>9.2</span>
+          <span class="stat-k">Wolt</span>
+        </div>
+        <div class="stat">
+          <span class="stat-v"><span class="star">★</span>4.65</span>
+          <span class="stat-k">Google</span>
+        </div>
+        <div class="stat">
+          <span class="stat-v">1.50€</span>
+          <span class="stat-k" data-sq="çdo tost" data-en="every toast">çdo tost</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- photo collage -->
+    <div class="collage">
+      <figure class="frame">
+        <span class="tape" aria-hidden="true"></span>
+        <img src="assets/exterior.jpg" alt="Ilustrim i dyqanit Dosta #sa Tosta në Ulpianë, Prishtinë" fetchpriority="high">
+        <figcaption data-sq="Ulpianë · Prishtinë" data-en="Ulpiana · Prishtina">Ulpianë · Prishtinë</figcaption>
+      </figure>
+      <img class="snack" src="assets/menu/ham-toast.jpeg" alt="Tost me proshutë" loading="lazy">
+      <div class="stamp" aria-hidden="true">
+        <span class="big">1.50€</span>
+        <span class="small" data-sq="çdo tost" data-en="every toast">çdo tost</span>
+      </div>
+    </div>
+
+  </div>
+</header>
+
+<!-- ================= MARQUEE ================= -->
+<div class="marquee dark" aria-hidden="true">
+  <div class="marquee-track">
+    <span>Dosta #Sa Tosta</span><span class="sep">✶</span><span data-sq="Jo thjesht tosta" data-en="Not just toast">Jo thjesht tosta</span><span class="sep">✶</span><span data-sq="Çdo tost 1.50€" data-en="Every toast €1.50">Çdo tost 1.50€</span><span class="sep">✶</span><span>Ulpianë · Prishtinë</span><span class="sep">✶</span>
+    <span>Dosta #Sa Tosta</span><span class="sep">✶</span><span data-sq="Jo thjesht tosta" data-en="Not just toast">Jo thjesht tosta</span><span class="sep">✶</span><span data-sq="Çdo tost 1.50€" data-en="Every toast €1.50">Çdo tost 1.50€</span><span class="sep">✶</span><span>Ulpianë · Prishtinë</span><span class="sep">✶</span>
+  </div>
+</div>
+
+<!-- ================= MENU ================= -->
+<section id="menu" class="wrap">
+  <div class="sec-head reveal">
+    <span class="eyebrow" data-sq="Menyja" data-en="The Menu">Menyja</span>
+    <h2 class="sec-title display"
+        data-sq="Nxehtë nga <em class='hl'>presa</em>."
+        data-en="Hot off the <em class='hl'>press</em>.">Nxehtë nga <em class="hl">presa</em>.</h2>
+    <p data-sq="Tosta të shtypura në moment dhe pije të ftohta. Thjesht, shpejt dhe me çmim që të lejon të marrësh dy."
+       data-en="Pressed-to-order toasts and cold drinks. Simple, fast, and priced so you can grab two.">
+      Tosta të shtypura në moment dhe pije të ftohta. Thjesht, shpejt dhe me çmim që të lejon të marrësh dy.</p>
+  </div>
+
+  <!-- TOASTS -->
+  <div class="cat-label display reveal">
+    <span data-sq="Tosta" data-en="Toasts">Tosta</span>
+    <span class="k" data-sq="// të gjitha 1.50€" data-en="// all €1.50">// të gjitha 1.50€</span>
+  </div>
+  <div class="grid toasts">
+    <article class="card reveal">
+      <div class="card-img"><span class="tag-pop" data-sq="Popullor" data-en="Popular">Popullor</span><img src="assets/menu/chicken-toast.jpeg" alt="Tost me pulë" loading="lazy"></div>
+      <div class="card-body"><span class="card-name" data-sq="Tost me Pulë" data-en="Chicken Toast">Tost me Pulë</span><span class="price">1.50€</span></div>
+    </article>
+    <article class="card reveal">
+      <div class="card-img"><span class="tag-pop" data-sq="Popullor" data-en="Popular">Popullor</span><img src="assets/menu/ham-toast.jpeg" alt="Tost me proshutë" loading="lazy"></div>
+      <div class="card-body"><span class="card-name" data-sq="Tost me Proshutë" data-en="Ham Toast">Tost me Proshutë</span><span class="price">1.50€</span></div>
+    </article>
+    <article class="card reveal">
+      <div class="card-img"><span class="tag-pop" data-sq="Popullor" data-en="Popular">Popullor</span><img src="assets/menu/toast-salami.jpeg" alt="Tost me sallam" loading="lazy"></div>
+      <div class="card-body"><span class="card-name" data-sq="Tost me Sallam" data-en="Salami Toast">Tost me Sallam</span><span class="price">1.50€</span></div>
+    </article>
+    <article class="card reveal">
+      <div class="card-img"><span class="tag-pop" data-sq="Popullor" data-en="Popular">Popullor</span><img src="assets/menu/sausage-toast.jpeg" alt="Tost me suxhuk" loading="lazy"></div>
+      <div class="card-body"><span class="card-name" data-sq="Tost me Suxhuk" data-en="Sausage Toast">Tost me Suxhuk</span><span class="price">1.50€</span></div>
+    </article>
+    <article class="card reveal">
+      <div class="card-img"><img src="assets/menu/toast-tuna.jpeg" alt="Tost me ton" loading="lazy"></div>
+      <div class="card-body"><span class="card-name" data-sq="Tost me Ton" data-en="Tuna Toast">Tost me Ton</span><span class="price">1.50€</span></div>
+    </article>
+  </div>
+
+  <!-- DRINKS -->
+  <div class="cat-label display reveal">
+    <span data-sq="Pije të Ftohta" data-en="Cold Drinks">Pije të Ftohta</span>
+    <span class="k" data-sq="// merr një të ftohtë" data-en="// grab a cold one">// merr një të ftohtë</span>
+  </div>
+  <div class="grid drinks">
+    <article class="card reveal">
+      <div class="card-img"><img src="assets/menu/coca-cola.jpeg" alt="Coca Cola" loading="lazy"></div>
+      <div class="card-body"><span class="card-name">Coca Cola</span><span class="price">1.50€</span></div>
+    </article>
+    <article class="card reveal">
+      <div class="card-img"><img src="assets/menu/fanta-orange.jpeg" alt="Fanta" loading="lazy"></div>
+      <div class="card-body"><span class="card-name">Fanta</span><span class="price">1.50€</span></div>
+    </article>
+    <article class="card reveal">
+      <div class="card-img"><img src="assets/menu/ice-tea.jpeg" alt="Çaj i ftohtë" loading="lazy"></div>
+      <div class="card-body"><span class="card-name" data-sq="Çaj i Ftohtë" data-en="Ice Tea">Çaj i Ftohtë</span><span class="price">1.50€</span></div>
+    </article>
+    <article class="card reveal">
+      <div class="card-img"><img src="assets/menu/water.jpeg" alt="Ujë" loading="lazy"></div>
+      <div class="card-body"><span class="card-name" data-sq="Ujë" data-en="Water">Ujë</span><span class="price">0.50€</span></div>
+    </article>
+    <article class="card reveal">
+      <div class="card-img"><img src="assets/menu/yogurt.jpeg" alt="Jogurt" loading="lazy"></div>
+      <div class="card-body"><span class="card-name" data-sq="Jogurt" data-en="Yogurt">Jogurt</span><span class="price">0.50€</span></div>
+    </article>
+    <article class="card reveal">
+      <div class="card-img"><img src="assets/menu/ajra.jpeg" alt="Ajran" loading="lazy"></div>
+      <div class="card-body"><span class="card-name">Ajran</span><span class="price">0.50€</span></div>
+    </article>
+  </div>
+</section>
+
+<!-- ================= ABOUT ================= -->
+<section class="about">
+  <div class="wrap about-grid">
+    <div class="about-copy reveal">
+      <span class="eyebrow" data-sq="Vendi" data-en="The Spot">Vendi</span>
+      <h2 class="sec-title display"
+          data-sq="Dyqan i vogël,<br>kafshatë e <em class='hl'>madhe</em>."
+          data-en="Small shop,<br>big <em class='hl'>crunch</em>.">Dyqan i vogël,<br>kafshatë e <em class="hl">madhe</em>.</h2>
+      <p data-sq="Në Zija Shemsiu, në mes të <b>Ulpianës</b>, Dosta #sa Tosta bën një gjë dhe e bën si duhet — <b>tosta të arta, të shtypura në moment</b>, të mbushura me proshutë, pulë, sallam, suxhuk apo ton."
+         data-en="On Zija Shemsiu, in the middle of <b>Ulpiana</b>, Dosta #sa Tosta does one thing and does it right — <b>golden, pressed-to-order toasts</b> stacked with ham, chicken, salami, sausage or tuna.">
+        Në Zija Shemsiu, në mes të <b>Ulpianës</b>, Dosta #sa Tosta bën një gjë dhe e bën si duhet — <b>tosta të arta, të shtypura në moment</b>, të mbushura me proshutë, pulë, sallam, suxhuk apo ton.</p>
+      <p data-sq="Pa komplikime, pa meny të gjatë. Vetëm <b>tosta të freskëta, pije të ftohta dhe çmim korrekt</b> — kafshata e shpejtë për të cilën Prishtina kthehet gjithmonë."
+         data-en="No fuss, no long menu. Just <b>fresh toasts, cold drinks and a fair price</b> — the quick bite Prishtina keeps coming back for.">
+        Pa komplikime, pa meny të gjatë. Vetëm <b>tosta të freskëta, pije të ftohta dhe çmim korrekt</b> — kafshata e shpejtë për të cilën Prishtina kthehet gjithmonë.</p>
+    </div>
+    <figure class="about-photo reveal">
+      <img src="assets/exterior-night.jpg" alt="Dosta #sa Tosta në mbrëmje, me tabelën neon ndezur" loading="lazy">
+    </figure>
+  </div>
+</section>
+
+<!-- ================= VISIT ================= -->
+<section id="visit" class="wrap">
+  <div class="sec-head reveal">
+    <span class="eyebrow" data-sq="Na vizito" data-en="Come by">Na vizito</span>
+    <h2 class="sec-title display" data-sq="Na gjeni <em class='hl'>këtu</em>." data-en="Find <em class='hl'>us</em>.">Na gjeni <em class="hl">këtu</em>.</h2>
+  </div>
+
+  <div class="info-grid">
+    <a class="info-card reveal" href="https://www.google.com/maps/search/?api=1&query=Dosta+sa+Tosta+Zija+Shemsiu+Prishtina" target="_blank" rel="noopener">
+      <div class="k" data-sq="Adresa" data-en="Address">Adresa</div>
+      <div class="v">Zija Shemsiu 96<br>
+        <span class="muted" data-sq="Ulpianë, Prishtinë 10000" data-en="Ulpiana, Prishtina 10000">Ulpianë, Prishtinë 10000</span><br>
+        <span class="go" data-sq="Hape në Maps →" data-en="Open in Maps →">Hape në Maps →</span></div>
+    </a>
+    <a class="info-card reveal" href="tel:+38345300077">
+      <div class="k" data-sq="Telefoni" data-en="Phone">Telefoni</div>
+      <div class="v">+383 45 300 077<br>
+        <span class="go" data-sq="Kliko për të telefonuar →" data-en="Tap to call →">Kliko për të telefonuar →</span></div>
+    </a>
+    <div class="info-card reveal">
+      <div class="k" data-sq="Orari" data-en="Hours">Orari</div>
+      <div class="v"><span data-sq="E hënë – E shtunë" data-en="Monday – Saturday">E hënë – E shtunë</span> · 09:00 – 21:00<br>
+        <span class="closed" data-sq="E diel · Mbyllur" data-en="Sunday · Closed">E diel · Mbyllur</span></div>
+    </div>
+  </div>
+
+  <div class="cta-band dark reveal">
+    <h3 class="display" data-sq="Të mori uria? <em class='hl'>Porosit tani.</em>" data-en="Hungry? <em class='hl'>Order now.</em>">Të mori uria? <em class="hl">Porosit tani.</em></h3>
+    <p data-sq="Dërgesa në tërë Prishtinën — të gjithë janë në Wolt gjithsesi."
+       data-en="Delivery across Prishtina — everyone's on Wolt anyway.">Dërgesa në tërë Prishtinën — të gjithë janë në Wolt gjithsesi.</p>
+    <a class="btn btn-wolt" href="https://wolt.com/en/xkx/pristina/restaurant/dosta-sa-tosta-1" target="_blank" rel="noopener">
+      <span class="btn-verb" data-sq="Porosit në" data-en="Order on">Porosit në</span> <span class="wolt-mark">Wolt</span>
+    </a>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer class="dark">
+  <div class="wrap foot-grid">
+    <div>
+      <div class="foot-brand">DOSTA<span class="hash">#SA</span>TOSTA</div>
+      <p class="foot-tag" data-sq="Jo thjesht tosta — vendi i Ulpianës për një kafshatë të shpejtë."
+         data-en="Not just toast — Ulpiana's go-to for a quick bite.">Jo thjesht tosta — vendi i Ulpianës për një kafshatë të shpejtë.</p>
+    </div>
+    <div class="foot-hours">
+      <span class="k" data-sq="Orari i punës" data-en="Opening hours">Orari i punës</span>
+      <span data-sq="E hënë – E shtunë · 09:00 – 21:00<br>E diel · Mbyllur"
+            data-en="Monday – Saturday · 09:00 – 21:00<br>Sunday · Closed">E hënë – E shtunë · 09:00 – 21:00<br>E diel · Mbyllur</span>
+    </div>
+  </div>
+  <div class="wrap foot-note">© <span id="yr"></span> Dosta #sa Tosta · Zija Shemsiu 96, Prishtinë · +383 45 300 077</div>
+</footer>
+
+<a class="btn btn-wolt float-order" href="https://wolt.com/en/xkx/pristina/restaurant/dosta-sa-tosta-1" target="_blank" rel="noopener">
+  <span class="btn-verb" data-sq="Porosit në" data-en="Order on">Porosit në</span> <span class="wolt-mark">Wolt</span>
+</a>
+
+<script>
+document.getElementById('yr').textContent = new Date().getFullYear();
+
+/* ---- language switch (SQ default, remembered) ---- */
+const TITLES = {
+  sq:'Dosta #sa Tosta — Jo thjesht tosta! · Ulpianë, Prishtinë',
+  en:'Dosta #sa Tosta — Not just toast! · Ulpiana, Prishtina'
+};
+const nodes = document.querySelectorAll('[data-sq]');
+const buttons = document.querySelectorAll('.lang button');
+
+function setLang(l){
+  document.documentElement.lang = l;
+  document.title = TITLES[l];
+  // content is authored in this file only — safe to assign as markup
+  nodes.forEach(n => { if(n.dataset[l]) n.innerHTML = n.dataset[l]; });
+  buttons.forEach(b => b.setAttribute('aria-pressed', String(b.dataset.lang === l)));
+  try { localStorage.setItem('dst-lang', l); } catch(e){}
+  renderStatus();   // hoisted below — keeps the open/closed badge in the right language
+}
+
+buttons.forEach(b => b.addEventListener('click', () => setLang(b.dataset.lang)));
+
+let saved = 'sq';
+try { saved = localStorage.getItem('dst-lang') || 'sq'; } catch(e){}
+if (saved === 'en') setLang('en');
+
+/* ---- live open / closed badge (Kosovo time, so it's right from anywhere) ---- */
+const OPEN_H = 9, CLOSE_H = 21;   // Mon–Sat; Sunday closed
+const STATUS_TEXT = {
+  sq:{open:h=>`Hapur tani · deri ${h}:00`, soon:h=>`Hapet në ${h}:00`, closed:'Mbyllur sot'},
+  en:{open:h=>`Open now · until ${h}:00`,  soon:h=>`Opens at ${h}:00`,  closed:'Closed today'}
+};
+
+function kosovoNow(){
+  const p = new Intl.DateTimeFormat('en-GB',{
+    timeZone:'Europe/Belgrade', weekday:'short', hour:'2-digit', minute:'2-digit', hour12:false
+  }).formatToParts(new Date());
+  const g = t => p.find(x=>x.type===t).value;
+  const days = {Sun:0,Mon:1,Tue:2,Wed:3,Thu:4,Fri:5,Sat:6};
+  return {day:days[g('weekday')], hour:+g('hour'), min:+g('minute')};
+}
+
+function renderStatus(){
+  const el = document.getElementById('status');
+  if(!el) return;
+  const {day,hour} = kosovoNow();
+  const l = document.documentElement.lang === 'en' ? 'en' : 'sq';
+  const t = STATUS_TEXT[l];
+  let state, label;
+
+  if(day === 0){ state='closed'; label=t.closed; }              // Sunday
+  else if(hour >= OPEN_H && hour < CLOSE_H){ state='open'; label=t.open(CLOSE_H); }
+  else if(hour < OPEN_H){ state='soon'; label=t.soon(OPEN_H); }
+  else { state='closed'; label=t.closed; }
+
+  el.hidden = false;
+  el.dataset.state = state;
+  el.textContent = label;
+}
+renderStatus();
+setInterval(renderStatus, 60000);
+
+/* ---- reveal on scroll ---- */
+const io = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+}, {threshold:.1});
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+</script>
+</body>
+</html>

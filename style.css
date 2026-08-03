@@ -1,0 +1,372 @@
+/* ============================================================
+   DOSTA #SA TOSTA — "Warm Deli"
+   Flat espresso + cream paper, brick red & ochre accents.
+   Mobile-first, built on an 8pt spacing scale.
+   ============================================================ */
+
+:root{
+  /* surfaces */
+  --espresso:#2e2018;   /* dark bar/footer — flat, no fake grain */
+  --espresso-2:#3b291e;
+  --paper:  #f7efe2;
+  --paper-2:#efe4d2;
+  --card:   #fffbf3;
+
+  /* ink */
+  --ink:     #2c1d12;
+  --ink-soft:#7b6552;
+
+  /* accents */
+  --brick:#c2402c;
+  --ochre:#d99a1f;
+  --wolt: #00a5d1;
+
+  --line:rgba(44,29,18,.13);
+  --line-light:rgba(247,239,226,.18);
+
+  /* 8pt spacing scale */
+  --s1:4px; --s2:8px; --s3:12px; --s4:16px;
+  --s5:24px; --s6:32px; --s7:48px; --s8:64px;
+
+  --radius:16px;
+  --radius-sm:12px;
+  --maxw:1120px;
+  --shadow:0 12px 30px -16px rgba(44,29,18,.4);
+}
+
+*{margin:0;padding:0;box-sizing:border-box}
+
+/* clip sideways overflow at the root — belt & braces */
+html,body{overflow-x:clip;max-width:100%}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+
+body{
+  background:var(--paper);
+  color:var(--ink);
+  font-family:"Karla",system-ui,sans-serif;
+  font-size:17px;           /* comfortable mobile reading */
+  line-height:1.65;
+}
+
+/* subtle paper grain */
+body::before{
+  content:"";position:fixed;inset:0;z-index:9999;pointer-events:none;opacity:.04;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+
+.wrap{width:100%;max-width:var(--maxw);margin-inline:auto;padding-inline:20px}
+
+.display{
+  font-family:"Fraunces","Georgia",serif;
+  font-weight:700;
+  font-variation-settings:"SOFT" 40,"WONK" 1;
+  line-height:1.05;
+  letter-spacing:-.4px;
+}
+em.hl{font-style:normal;color:var(--brick)}
+
+/* flat dark surface + a warm top edge for depth */
+.dark{
+  background:var(--espresso);
+  color:var(--paper);
+  background-image:linear-gradient(180deg,rgba(255,255,255,.05),transparent 90px);
+}
+
+/* ---------- buttons — min 48px tap target ---------- */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:.4em;
+  min-height:48px;
+  font-family:"Karla",sans-serif;font-weight:700;font-size:1rem;
+  padding:0 var(--s5);border-radius:100px;border:2px solid transparent;
+  cursor:pointer;white-space:nowrap;
+  transition:transform .16s ease,box-shadow .16s ease,background .16s ease,color .16s ease;
+}
+.btn:active{transform:scale(.97)}
+.btn-wolt{background:var(--wolt);color:#00303d;box-shadow:0 6px 16px -6px rgba(0,165,209,.6)}
+.btn-wolt:hover{transform:translateY(-2px);box-shadow:0 12px 22px -6px rgba(0,165,209,.7)}
+.btn-ghost{background:transparent;color:var(--ink);border-color:var(--line)}
+.btn-ghost:hover{border-color:var(--brick);color:var(--brick)}
+.wolt-mark{font-family:"Fraunces",serif;font-weight:700;font-size:1.05em;line-height:1}
+
+:focus-visible{outline:3px solid var(--ochre);outline-offset:2px;border-radius:4px}
+
+/* ---------- nav — must never exceed viewport ---------- */
+.nav{
+  position:sticky;top:0;z-index:100;
+  display:flex;align-items:center;justify-content:space-between;
+  gap:var(--s2);
+  padding:var(--s2) var(--s4);
+  border-bottom:1px solid rgba(0,0,0,.35);
+}
+.nav-brand{
+  font-family:"Fraunces",serif;font-weight:700;
+  font-size:.95rem;letter-spacing:-.2px;line-height:1;
+  min-width:0;flex-shrink:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;
+}
+.nav-brand .hash{color:var(--ochre)}
+.nav-right{display:flex;align-items:center;gap:var(--s2);flex-shrink:0}
+.nav .btn{min-height:44px;padding:0 var(--s4);font-size:.88rem}
+
+.lang{display:flex;border:1.5px solid var(--line-light);border-radius:100px;overflow:hidden}
+.lang button{
+  font-family:"Karla",sans-serif;font-weight:700;font-size:.78rem;letter-spacing:.4px;
+  min-height:44px;padding:0 var(--s3);
+  background:transparent;color:var(--paper);border:0;cursor:pointer;
+  transition:background .15s ease,color .15s ease;
+}
+.lang button[aria-pressed="true"]{background:var(--ochre);color:var(--espresso)}
+
+/* only the NAV button drops its verb on narrow phones — the big
+   CTAs always read "Porosit në Wolt", never a bare "Wolt" */
+@media (max-width:399px){ .nav .btn-verb{display:none} }
+
+/* ---------- hero ---------- */
+.hero{padding-block:var(--s7) var(--s8)}
+.hero-inner{display:grid;gap:var(--s7)}
+.eyebrow{
+  display:inline-flex;align-items:center;gap:var(--s2);
+  font-weight:700;font-size:.72rem;letter-spacing:2.5px;text-transform:uppercase;
+  color:var(--brick);
+}
+.eyebrow::before{content:"";width:20px;height:2px;background:var(--brick)}
+
+/* eyebrow + live status share a row */
+.hero-meta{display:flex;align-items:center;gap:var(--s3);flex-wrap:wrap;row-gap:var(--s2)}
+
+.status{
+  display:inline-flex;align-items:center;gap:7px;
+  font-size:.76rem;font-weight:700;letter-spacing:.2px;
+  padding:5px 12px;border-radius:100px;
+  background:var(--card);border:1px solid var(--line);color:var(--ink-soft);
+}
+.status::before{content:"";width:7px;height:7px;border-radius:50%;background:currentColor;flex:none}
+.status[data-state="open"]{color:#3f7d2e;border-color:rgba(63,125,46,.35);background:rgba(63,125,46,.09)}
+.status[data-state="open"]::before{box-shadow:0 0 0 3px rgba(63,125,46,.18)}
+.status[data-state="soon"]{color:#9a6a12;border-color:rgba(217,154,31,.4);background:rgba(217,154,31,.12)}
+.status[data-state="closed"]{color:var(--brick);border-color:rgba(194,64,44,.3);background:rgba(194,64,44,.08)}
+
+/* generous vertical rhythm — this is what felt cramped before */
+.hero h1{font-size:clamp(2.5rem,11vw,4.6rem);margin-top:var(--s5)}
+.squiggle{display:block;width:min(60%,250px);margin-top:var(--s3);color:var(--ochre)}
+.hero-sub{margin-top:var(--s5);color:var(--ink-soft);font-size:1.05rem;max-width:38ch}
+.hero-sub b{color:var(--ink)}
+.hero-cta{margin-top:var(--s6);display:flex;gap:var(--s3);flex-wrap:wrap}
+.hero-cta .btn{flex:1 1 auto;min-width:150px}
+
+/* stats: one tidy divided strip, never loose wrapping pills */
+.stats{
+  margin-top:var(--s6);
+  display:grid;grid-template-columns:repeat(3,1fr);
+  background:var(--card);border:1px solid var(--line);
+  border-radius:var(--radius);overflow:hidden;
+}
+.stat{padding:var(--s4) var(--s2);text-align:center;border-left:1px solid var(--line)}
+.stat:first-child{border-left:0}
+.stat-v{
+  display:flex;align-items:center;justify-content:center;gap:4px;
+  font-family:"Fraunces",serif;font-weight:700;font-size:1.2rem;line-height:1;
+}
+.stat-v .star{color:var(--ochre);font-size:.85em}
+.stat-k{
+  display:block;margin-top:5px;
+  font-size:.68rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;
+  color:var(--ink-soft);
+}
+
+/* photo collage */
+.collage{position:relative;padding:var(--s3) var(--s2) var(--s6)}
+.frame{
+  position:relative;background:var(--card);
+  padding:10px 10px 40px;border-radius:4px;
+  box-shadow:var(--shadow);transform:rotate(-1.4deg);
+}
+/* object-position favours the top so the sign & awning always survive the crop */
+.frame img{width:100%;aspect-ratio:16/11;object-fit:cover;object-position:50% 38%;border-radius:2px}
+.frame figcaption{
+  position:absolute;left:0;right:0;bottom:var(--s3);text-align:center;
+  font-family:"Fraunces",serif;font-size:.82rem;color:var(--ink-soft);
+}
+.tape{
+  position:absolute;top:-10px;left:50%;translate:-50% 0;
+  width:92px;height:22px;background:rgba(217,154,31,.45);
+  border-inline:1px dashed rgba(255,255,255,.5);rotate:-2deg;
+}
+.snack{
+  position:absolute;right:6px;bottom:var(--s2);width:36%;max-width:140px;
+  border:5px solid var(--card);border-radius:4px;
+  box-shadow:var(--shadow);rotate:4deg;aspect-ratio:1;object-fit:cover;
+}
+.stamp{
+  position:absolute;left:var(--s1);bottom:var(--s4);z-index:2;
+  width:84px;height:84px;border-radius:50%;
+  display:grid;place-content:center;text-align:center;
+  border:2px dashed var(--brick);color:var(--brick);
+  background:rgba(247,239,226,.92);rotate:-11deg;
+}
+.stamp .big{font-family:"Fraunces",serif;font-weight:700;font-size:1.2rem;line-height:1}
+.stamp .small{font-size:.55rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-top:3px}
+
+/* ---------- marquee ---------- */
+.marquee{overflow:hidden;white-space:nowrap;padding:var(--s3) 0}
+.marquee-track{display:inline-flex;animation:scroll 38s linear infinite;will-change:transform}
+.marquee span{
+  font-family:"Fraunces",serif;font-weight:700;text-transform:uppercase;
+  font-size:1rem;letter-spacing:.4px;padding-inline:var(--s4);
+}
+.marquee .sep{color:var(--ochre)}
+@keyframes scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* ---------- sections ---------- */
+section{padding-block:var(--s8)}
+.sec-head{margin-bottom:var(--s6)}
+.sec-title{font-size:clamp(2.1rem,5vw + 1rem,3.5rem);margin-top:var(--s3)}
+.sec-head p{color:var(--ink-soft);max-width:58ch;margin-top:var(--s4)}
+
+/* ---------- menu ---------- */
+.cat-label{display:flex;align-items:center;gap:var(--s3);margin:var(--s7) 0 var(--s4);font-size:1.4rem}
+.cat-label::after{content:"";flex:1;height:2px;
+  background:repeating-linear-gradient(90deg,var(--line) 0 6px,transparent 6px 10px)}
+.cat-label .k{font-family:"Karla",sans-serif;font-size:.72rem;font-weight:700;letter-spacing:1.5px;
+  text-transform:uppercase;color:var(--ink-soft)}
+
+.grid{display:grid;gap:var(--s3)}
+
+/* MOBILE: roomy list rows (the pattern every food app uses) */
+.card{
+  display:flex;align-items:center;gap:var(--s4);
+  background:var(--card);border:1px solid var(--line);
+  border-radius:var(--radius);padding:10px;
+  box-shadow:0 4px 14px -12px rgba(44,29,18,.5);
+  transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease;
+}
+.card:hover{border-color:rgba(194,64,44,.4);box-shadow:var(--shadow)}
+.card-img{
+  position:relative;flex:0 0 92px;width:92px;aspect-ratio:1;
+  border-radius:var(--radius-sm);overflow:hidden;background:var(--paper-2);
+}
+.card-img img{width:100%;height:100%;object-fit:cover;transition:transform .45s ease}
+.card:hover .card-img img{transform:scale(1.05)}
+.card-body{flex:1;min-width:0;display:flex;align-items:center;justify-content:space-between;gap:var(--s3);padding-right:var(--s2)}
+.card-name{font-family:"Fraunces",serif;font-weight:700;font-size:1.05rem;line-height:1.25}
+.price{
+  flex-shrink:0;font-family:"Fraunces",serif;font-weight:700;font-size:.92rem;
+  color:var(--espresso);background:rgba(217,154,31,.22);
+  border:1px solid rgba(217,154,31,.5);
+  padding:5px 12px;border-radius:100px;
+}
+/* popular = compact star badge on mobile */
+.tag-pop{
+  position:absolute;top:5px;left:5px;
+  display:grid;place-content:center;
+  width:22px;height:22px;border-radius:50%;
+  background:var(--brick);color:#fff;font-size:0;
+}
+.tag-pop::after{content:"★";font-size:11px;line-height:1}
+
+/* ---------- about ---------- */
+.about{background:var(--paper-2);border-block:1px solid var(--line)}
+.about-grid{display:grid;gap:var(--s7);align-items:center}
+.about-copy p{color:var(--ink-soft);margin-top:var(--s4);max-width:58ch}
+.about-copy p b{color:var(--ink)}
+.about-photo{position:relative;background:var(--card);padding:10px;border-radius:6px;
+  box-shadow:var(--shadow);transform:rotate(1.2deg)}
+.about-photo img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:3px}
+
+/* ---------- visit ---------- */
+.info-grid{display:grid;gap:var(--s3)}
+.info-card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+  padding:var(--s5);transition:border-color .18s ease,transform .18s ease}
+a.info-card:hover{border-color:var(--brick);transform:translateY(-3px)}
+.info-card .k{font-size:.68rem;letter-spacing:2px;text-transform:uppercase;color:var(--brick);font-weight:700}
+.info-card .v{margin-top:var(--s2);font-size:1.02rem;line-height:1.55}
+.info-card .muted{color:var(--ink-soft)}
+.info-card .go{display:inline-block;margin-top:var(--s1);font-size:.85rem;font-weight:700;color:var(--brick)}
+.closed{color:var(--brick);font-weight:700}
+
+.cta-band{margin-top:var(--s6);border-radius:var(--radius);padding:var(--s7) var(--s5);text-align:center}
+.cta-band h3{font-size:clamp(1.8rem,6vw,2.6rem)}
+.cta-band h3 em.hl{color:var(--ochre)}
+.cta-band p{color:rgba(247,239,226,.75);margin:var(--s3) 0 var(--s5);max-width:46ch;margin-inline:auto}
+
+/* ---------- footer ---------- */
+footer{padding-block:var(--s6) 112px}
+.foot-grid{display:grid;gap:var(--s5)}
+.foot-brand{font-family:"Fraunces",serif;font-weight:700;font-size:1.5rem}
+.foot-brand .hash{color:var(--ochre)}
+.foot-tag{color:rgba(247,239,226,.72);margin-top:var(--s2);max-width:36ch;font-size:.95rem}
+.foot-hours{font-size:.95rem;color:rgba(247,239,226,.72)}
+.foot-hours .k{color:var(--paper);font-weight:700;display:block;margin-bottom:var(--s1)}
+.foot-note{margin-top:var(--s5);padding-top:var(--s4);border-top:1px solid var(--line-light);
+  color:rgba(247,239,226,.55);font-size:.82rem;text-align:center}
+
+/* ---------- floating order bar (respects iOS safe area) ---------- */
+.float-order{
+  position:fixed;z-index:90;
+  left:var(--s4);right:var(--s4);
+  bottom:calc(var(--s4) + env(safe-area-inset-bottom));
+  box-shadow:0 10px 26px -8px rgba(0,165,209,.7);
+}
+
+/* ---------- reveal ---------- */
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .55s ease,transform .55s ease}
+.reveal.in{opacity:1;transform:none}
+
+@media (prefers-reduced-motion:reduce){
+  .marquee-track{animation:none}
+  .reveal{opacity:1;transform:none;transition:none}
+  html{scroll-behavior:auto}
+}
+
+/* ============================================================
+   ≥560px — cards become photo tiles
+   ============================================================ */
+@media (min-width:560px){
+  .nav-brand{font-size:1.15rem}
+  .grid{gap:var(--s4)}
+  .grid.toasts{grid-template-columns:repeat(2,1fr)}
+  .grid.drinks{grid-template-columns:repeat(3,1fr)}
+
+  .card{display:block;padding:0;overflow:hidden}
+  .card:hover{transform:translateY(-4px)}
+  .card-img{flex:none;width:100%;border-radius:0}
+  .grid.toasts .card-img{aspect-ratio:4/3}
+  .grid.drinks .card-img{aspect-ratio:1}
+  .card-body{padding:var(--s3) var(--s4) var(--s4)}
+  .card-name{font-size:1rem}
+
+  /* full "Popular" pill returns */
+  .tag-pop{
+    width:auto;height:auto;border-radius:100px;
+    top:var(--s2);left:var(--s2);padding:4px 10px;
+    font-family:"Karla",sans-serif;font-size:.62rem;font-weight:700;
+    letter-spacing:.8px;text-transform:uppercase;
+  }
+  .tag-pop::after{content:none}
+
+  .float-order{display:none}
+  .info-grid{gap:var(--s4)}
+}
+
+@media (min-width:760px){
+  section{padding-block:88px}
+  .wrap{padding-inline:28px}
+  .grid.toasts{grid-template-columns:repeat(3,1fr)}
+  .grid.drinks{grid-template-columns:repeat(6,1fr)}
+  .info-grid{grid-template-columns:repeat(3,1fr)}
+  .foot-grid{grid-template-columns:1fr auto}
+  .marquee span{font-size:1.1rem}
+}
+
+@media (min-width:960px){
+  .hero{padding-block:72px 88px}
+  .hero-inner{grid-template-columns:1.02fr .98fr;gap:56px;align-items:center}
+  .about-grid{grid-template-columns:1.05fr .95fr;gap:56px}
+  .cta-band{padding:56px var(--s6)}
+}
+
+@media (min-width:1100px){
+  .grid.toasts{grid-template-columns:repeat(5,1fr)}
+}
